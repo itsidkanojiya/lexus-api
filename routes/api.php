@@ -35,7 +35,9 @@ Route::post('/verify-token', [AuthController::class, 'verifyToken'])->middleware
 
 
 //Analytics
-Route::get('/analysis', [AnalysisController::class, 'getAnalysis'])->middleware('auth:sanctum');
+Route::get('/teacher-analysis', [AnalysisController::class, 'getTeacherAnalysis'])->middleware('auth:sanctum');
+Route::get('/student-analysis', [AnalysisController::class, 'getStudentAnalysis'])->middleware('auth:sanctum');
+Route::get('/question-analysis', [AnalysisController::class, 'getQuestionAnalysis'])->middleware('auth:sanctum');
 
 
 //Teacher

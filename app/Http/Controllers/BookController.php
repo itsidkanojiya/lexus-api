@@ -34,7 +34,7 @@ class BookController extends Controller
         $validation=  $request->validate([
            'name'    => 'required',
             'std'    => 'required',
-            'board'      => 'required',
+          'board'      => 'required',
            'pdf_link' => 'required',
             'cover_link' => 'required',
          ]);
