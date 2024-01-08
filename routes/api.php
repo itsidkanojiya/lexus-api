@@ -10,6 +10,7 @@ use App\Http\Controllers\McqController;
 use App\Http\Controllers\OneTWoController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\ShortController;
+use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
@@ -48,20 +49,30 @@ Route::put('/make-activate', [TeacherController::class, 'makeActivate'])->middle
 Route::put('/make-deactivate', [TeacherController::class, 'makeDeactivate'])->middleware('auth:sanctum');
 Route::delete('/delete-teacher', [TeacherController::class, 'deleteTeacher'])->middleware('auth:sanctum');
 
+
 //Student
 Route::post('/student-register', [StudentController::class, 'studentRegister']);
 Route::get('/students', [StudentController::class, 'getStudent'])->middleware('auth:sanctum');
 Route::delete('/delete-student', [StudentController::class, 'deleteStudent'])->middleware('auth:sanctum');
+
 
 //Book
 Route::post('/add-book', [BookController::class, 'addBook']);
 Route::post('/edit-book', [BookController::class, 'editBook']);
 Route::get('/books', [BookController::class, 'getBooks']);
 
+
+//Solution
+Route::post('/add-solution', [SolutionController::class, 'addSolution']);
+Route::post('/edit-solution', [SolutionController::class, 'editSolution']);
+Route::get('/solutions', [SolutionController::class, 'getSolutions']);
+
+
 //Board
 Route::post('/add-board', [BoardController::class, 'addBoard'])->middleware('auth:sanctum');;
 Route::post('/edit-board', [BoardController::class, 'editBoard'])->middleware('auth:sanctum');;
 Route::get('/board', [BoardController::class, 'getBoard']);
+
 
 //Subject
 Route::post('/add-subject', [SubjectController::class, 'addSubject']);
