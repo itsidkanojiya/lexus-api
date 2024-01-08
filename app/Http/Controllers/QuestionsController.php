@@ -44,22 +44,5 @@ class QuestionsController extends Controller
         return response($combinedResults, 200);
     }
 
-    public function get1Questions(Request $request){
-       // $user = $request->user();
-        $mcq = DB::table('mcq')->where('deleted_at',null)->get();
-        $long = DB::table('long')->where('deleted_at',null)->get();
-        $short = DB::table('short')->where('deleted_at',null)->get();
-        $truefalse = DB::table('true_false')->where('deleted_at',null)->get();
-        $onetwo = DB::table('onetwo')->where('deleted_at',null)->get();
-        $blank = DB::table('blanks')->where('deleted_at',null)->get();
 
-        return response([
-            'mcq' => $mcq,
-            'long' => $long,
-            'short' => $short,
-            'true&false' => $truefalse,
-            'blank' => $blank,
-            'onetwo' => $onetwo,
-            ],200);
-    }
 }

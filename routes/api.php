@@ -8,6 +8,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\LongController;
 use App\Http\Controllers\McqController;
 use App\Http\Controllers\OneTWoController;
+use App\Http\Controllers\PaperController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\ShortController;
 use App\Http\Controllers\SolutionController;
@@ -61,6 +62,10 @@ Route::post('/add-book', [BookController::class, 'addBook']);
 Route::post('/edit-book', [BookController::class, 'editBook']);
 Route::get('/books', [BookController::class, 'getBooks']);
 
+
+//Paper
+Route::post('/add-paper', [PaperController::class, 'addPaper']);
+Route::get('/paper', [PaperController::class, 'getPaper']);
 
 //Solution
 Route::post('/add-solution', [SolutionController::class, 'addSolution']);
