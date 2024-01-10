@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlankController;
 use App\Http\Controllers\BoardController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\GeneratorController;
 use App\Http\Controllers\LongController;
 use App\Http\Controllers\McqController;
 use App\Http\Controllers\OneTWoController;
@@ -64,8 +65,8 @@ Route::get('/books', [BookController::class, 'getBooks']);
 
 
 //Paper
-Route::post('/add-paper', [PaperController::class, 'addPaper']);
-Route::get('/paper', [PaperController::class, 'getPaper']);
+Route::post('/add-paper', [GeneratorController::class, 'addPaper'])->middleware('auth:sanctum');;
+Route::get('/paper-by-user', [GeneratorController::class, 'getPaperbyUser'])->middleware('auth:sanctum');;
 
 //Solution
 Route::post('/add-solution', [SolutionController::class, 'addSolution']);
