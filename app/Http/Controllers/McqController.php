@@ -93,7 +93,8 @@ class McqController extends Controller
         return response([
             'message' => 'Mcq edited Successfully',
             ],201);
-    }  public function deleteMcq(Request $request){
+    }
+     public function deleteMcq(Request $request){
 
         $request->validate([
             'id'    => 'required',

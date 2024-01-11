@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -79,6 +80,19 @@ class BookController extends Controller
         $bookId= DB::table('books')->where('id',$request->id)->update($validation);
         return response([
             'message' => 'Books edited Successfully',
+            ],200);
+    }
+    public function deleteBook(Request $request){
+
+        $request->validate([
+            'id'    => 'required',
+
+         ]);
+         $current_timestamp = Carbon::now();
+
+         DB::table('books')->where('id',$request->id)->update(array('deleted_at' =>  $current_timestamp));;
+        return response([
+            'message' => 'Successfully Deleted',
             ],200);
     }
 }

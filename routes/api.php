@@ -62,6 +62,7 @@ Route::delete('/delete-student', [StudentController::class, 'deleteStudent'])->m
 Route::post('/add-book', [BookController::class, 'addBook']);
 Route::post('/edit-book', [BookController::class, 'editBook']);
 Route::get('/books', [BookController::class, 'getBooks']);
+Route::delete('/delete-book', [BookController::class, 'deleteBook']);
 
 
 //Paper

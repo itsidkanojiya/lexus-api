@@ -14,10 +14,10 @@ class SubjectController extends Controller
             'subjects' =>  $subjects],200);
 
     }
+
     public function addSubject(Request $request){
         $validation=  $request->validate([
             'name'    => 'required',
-
          ]);
          $validation['name'] =  $request->name;
 
